@@ -72,17 +72,25 @@ def update_brightness(value):
 
 
 def process_image(image, brightness_threshold):
-    # Convert image to grayscale
-    grayscale_image = ImageOps.grayscale(image)
+    def is_bright(pixel):
+        # Calculate the brightness of the pixel
+        return sum(pixel) / 3 > brightness_threshold
 
-    # Define a filter function for brightness
-    def filter_brightness(pixel):
-        return 255 if pixel > brightness_threshold else 0
+    if image.mode == 'RGB':
+        # Convert image to an array of pixel values
+        pixels = list(image.getdata())
 
-    # Apply the filter function to each pixel
-    filtered_image = grayscale_image.point(filter_brightness)
+        # Process each pixel
+        processed_pixels = [(255, 255, 255) if is_bright(pixel) else pixel for pixel in pixels]
 
-    return filtered_image
+        # Create a new image from the processed pixels
+        processed_image = Image.new('RGB', image.size)
+        processed_image.putdata(processed_pixels)
+
+        return processed_image
+    else:
+        # For non-RGB images, just return the original image
+        return image
 
 
 # Setup GUI
