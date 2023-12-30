@@ -17,7 +17,7 @@ thereby aiding artists in planning their watercolor compositions.
 - **Remove Images:** Users can remove images both from the GUI and the "images" folder.
 
 ## Installation
-To set up the Watercolor Artist Tool, follow these steps:
+To set up the Watercolor Artist Tool, you can use the install.bat app on windows or follow these steps:
 
 1. **Clone the Repository:**
 
@@ -33,9 +33,15 @@ To set up the Watercolor Artist Tool, follow these steps:
   source venv/bin/activate
   ```
 3. **Install Dependencies:**
-
+  ```
+  pip install -r requirements.txt
+  ```
 ## Usage
 Run the main script to start the application:
+```
+python main.py
+```
+or use the start_main.bat app on windows.
 
 Once the application is running:
 - Use the 'Load Images' button to select and load images.
@@ -60,3 +66,6 @@ This project is licensed under the [MIT License](LICENSE.md) - see the `LICENSE.
 
 ## Acknowledgments
 - Mention any third-party assets or contributors here.
+
+## Preview:
+![Tool Preview](assets/tool_preview.png)
