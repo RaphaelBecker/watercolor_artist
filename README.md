@@ -58,6 +58,10 @@ Once the application is running:
 - Tkinter for the GUI
 - Pillow for image processing
 
+## Planned Features
+- Proportion feedback: Overlay original and drawing image. Drawing image should only cut out lines. 
+The aim is to visualize the correct proportions of your drawing. This will improve your drawing skills and your sense of perspective 
+
 ## Contributing
 Contributions to the Watercolor Artist Tool are welcome! 
 
